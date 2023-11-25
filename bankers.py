@@ -51,7 +51,7 @@ b=int(input("\nEnter value for B :"))
 c=int(input("\nEnter value for C :"))
 avl=[a,b,c]
 print("\n\navailable resouces are :"+str(avl))
-n_resource=3
+n_resource=int(input("Enter number of resources"))
 safe_sequence = calculate_safe_sequence(avl, allc, maxi, k, n_resource)
 
 if type(safe_sequence) == str:
