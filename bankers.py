@@ -25,34 +25,43 @@ def calculate_safe_sequence(available, alloc, max_req, n_processes, n_resources)
                     finished[i] = True
                 break
     return safe_sequence
-k=int(input("enter quantity :"))
+k=int(input("enter number of processes :"))
+print("Your selected processes are :")
+for e in range(0,k):
+        print("P"+str(e))
 allc=[]
 maxi=[]
 avl=[]
+abc=['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+n=int(input("\nEnter number of resources :"))
 print("\n\nEnter allocations\n\n")
 for i in range(k):
-    a=int(input("\nEnter value for A :"))
-    b=int(input("\nEnter value for B :"))
-    c=int(input("\nEnter value for C :"))
-    m=[a,b,c]
+    m=[]
+    o=0
+    for k in range(n):
+        a=int(input("\nEnter value of "+abc[o]+" :"))
+        o+=1
+        m.append(a)
     allc.append(m)
     print("\n\nallocations:"+str(allc))
 print('\n\nenter maximum\n\n')
 for i in range(k):
-    a=int(input("\nEnter value for A :"))
-    b=int(input("\nEnter value for B :"))
-    c=int(input("\nEnter value for C :"))
-    m=[a,b,c]
+    m=[]
+    o=0
+    for k in range(n):
+        a=int(input("\nEnter value of "+abc[o]+" :"))
+        o+=1
+        m.append(a)
     maxi.append(m)
     print("\n\nmaximum resources are :"+str(maxi))
 print("\n\nEnter available\n\n")
-a=int(input("\nEnter value for A :"))
-b=int(input("\nEnter value for B :"))
-c=int(input("\nEnter value for C :"))
-avl=[a,b,c]
+o=0
+for k in range(n):
+        a=int(input("\nEnter value of "+abc[o]+" :"))
+        o+=1
+        avl.append(a)
 print("\n\navailable resouces are :"+str(avl))
-n_resource=int(input("Enter number of resources"))
-safe_sequence = calculate_safe_sequence(avl, allc, maxi, k, n_resource)
+safe_sequence = calculate_safe_sequence(avl, allc, maxi, k, n)
 
 if type(safe_sequence) == str:
     print(safe_sequence)
